@@ -1,0 +1,12 @@
+PowerPlay Power Analyzer Status : Successful - Wed Aug 12 20:26:08 2015
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : Lab7B
+Top-level Entity Name : Lab7B
+Family : Cyclone II
+Device : EP2C20F484C7
+Power Models : Final
+Total Thermal Power Dissipation : 71.15 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 47.36 mW
+I/O Thermal Power Dissipation : 23.79 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

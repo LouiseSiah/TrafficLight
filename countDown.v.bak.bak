@@ -1,0 +1,47 @@
+module countDown
+(
+	input yourClock, reset, count, load,
+	input tensValue,
+	input [3:0] unitValue,
+	output reg tensDigit,
+	output reg [3:0] unitDigit
+	//output reg [3:0] unitDigit, tensDigit
+);   
+
+al
+
+always@(posedge yourClock, negedge reset)
+	if(!reset)
+		begin
+		tensDigit <= 0;
+		unitDigit <= 0;
+		end
+	else
+		if(load)
+			begin
+			unitDigit <= unitValue;
+			tensDigit <= tensValue;
+			end
+		else
+			if(!count)
+				begin
+				unitDigit <= unitDigit;
+				tensDigit <= tensDigit;
+				end
+			else
+				if(unitDigit > 0)
+					unitDigit <= unitDigit - 1;
+				else
+					if(tensDigit)
+						begin
+						unitDigit <= 9;
+						tensDigit <= tensDigit - 1;
+						end
+					else
+						begin
+						tensDigit <= tensDigit;
+						unitDigit <= unitDigit;
+						end
+
+		
+endmodule

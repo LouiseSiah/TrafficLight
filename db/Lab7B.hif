@@ -1,0 +1,451 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+11
+980
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+seg7DisplayforSecond
+# storage
+db|Lab7B.(6).cnf
+db|Lab7B.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+seg7displayforsecond.v
+9b21863054ff3a10ac41bce9a7264d2
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+dataPath:TEST|seg7DisplayforSecond:secHEX
+}
+# macro_sequence
+
+# end
+# entity
+seg7DisplayforLast
+# storage
+db|Lab7B.(7).cnf
+db|Lab7B.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+seg7displayforlast.v
+6e9da63818da7dbcc3e897d29e90c5
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+dataPath:TEST|seg7DisplayforLast:rightHEX
+}
+# macro_sequence
+
+# end
+# entity
+oneSecClock
+# storage
+db|Lab7B.(1).cnf
+db|Lab7B.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+onesecclock.v
+8bda3a639f8a7b17e8b4d7d955a96859
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+dataPath:TEST|oneSecClock:clock
+}
+# macro_sequence
+
+# end
+# entity
+seg7DisplayforFirst
+# storage
+db|Lab7B.(3).cnf
+db|Lab7B.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+seg7displayforfirst.v
+226ef36f25e7a24af652cdd8d57f5f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+dataPath:TEST|seg7DisplayforFirst:leftHEX
+}
+# macro_sequence
+
+# end
+# entity
+seg7DisplayforThird
+# storage
+db|Lab7B.(5).cnf
+db|Lab7B.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+seg7displayforthird.v
+222da2824673c9c5aedb8f646cc88a84
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+dataPath:TEST|seg7DisplayforThird:thirdHEX
+}
+# macro_sequence
+
+# end
+# entity
+countDown
+# storage
+db|Lab7B.(4).cnf
+db|Lab7B.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+countdown.v
+cc4c8f3defb12f9745e3a346a61c23ff
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+dataPath:TEST|countDown:counter
+}
+# macro_sequence
+
+# end
+# entity
+controlUnit
+# storage
+db|Lab7B.(8).cnf
+db|Lab7B.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+controlunit.v
+8015123d7d3f2139a1d948738bd8d9
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+Crgo
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+Hrgo
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+Timer
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+Stop
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+s0
+000
+PARAMETER_UNSIGNED_BIN
+DEF
+s1
+001
+PARAMETER_UNSIGNED_BIN
+DEF
+s2
+010
+PARAMETER_UNSIGNED_BIN
+DEF
+s3
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+s4
+100
+PARAMETER_UNSIGNED_BIN
+DEF
+s2a
+101
+PARAMETER_UNSIGNED_BIN
+DEF
+s2b
+110
+PARAMETER_UNSIGNED_BIN
+DEF
+G
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+Y
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+R
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+controlUnit:integ
+}
+# macro_sequence
+
+# end
+# entity
+dataPath
+# storage
+db|Lab7B.(2).cnf
+db|Lab7B.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+datapath.v
+553dcded58529f587b38fe156e8d3b7b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+Stop
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+Hrgo
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+Crgo
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+Timer
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+H
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+S
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+C
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+t
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+r
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+g
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+p
+1010
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+dataPath:TEST
+}
+# macro_sequence
+
+# end
+# entity
+Lab7B
+# storage
+db|Lab7B.(0).cnf
+db|Lab7B.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+lab7btest2.v
+fa8f668da14adf5fca66dc9feabfc6b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

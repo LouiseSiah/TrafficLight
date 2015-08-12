@@ -1,0 +1,281 @@
+|Lab7B
+CLOCK_50 => CLOCK_50.IN2
+KEY[0] => KEY[0].IN2
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => SW[9].IN1
+LEDG[0] <= controlUnit:integ.port7
+LEDG[1] <= controlUnit:integ.port7
+LEDG[2] <= controlUnit:integ.port7
+LEDG[3] <= <GND>
+LEDG[4] <= controlUnit:integ.port10
+LEDG[5] <= controlUnit:integ.port10
+LEDG[6] <= controlUnit:integ.port9
+LEDG[7] <= controlUnit:integ.port9
+HEX0[0] <= dataPath:TEST.port7
+HEX0[1] <= dataPath:TEST.port7
+HEX0[2] <= dataPath:TEST.port7
+HEX0[3] <= dataPath:TEST.port7
+HEX0[4] <= dataPath:TEST.port7
+HEX0[5] <= dataPath:TEST.port7
+HEX0[6] <= dataPath:TEST.port7
+HEX1[0] <= dataPath:TEST.port8
+HEX1[1] <= dataPath:TEST.port8
+HEX1[2] <= dataPath:TEST.port8
+HEX1[3] <= dataPath:TEST.port8
+HEX1[4] <= dataPath:TEST.port8
+HEX1[5] <= dataPath:TEST.port8
+HEX1[6] <= dataPath:TEST.port8
+HEX2[0] <= dataPath:TEST.port9
+HEX2[1] <= dataPath:TEST.port9
+HEX2[2] <= dataPath:TEST.port9
+HEX2[3] <= dataPath:TEST.port9
+HEX2[4] <= dataPath:TEST.port9
+HEX2[5] <= dataPath:TEST.port9
+HEX2[6] <= dataPath:TEST.port9
+HEX3[0] <= dataPath:TEST.port10
+HEX3[1] <= dataPath:TEST.port10
+HEX3[2] <= dataPath:TEST.port10
+HEX3[3] <= dataPath:TEST.port10
+HEX3[4] <= dataPath:TEST.port10
+HEX3[5] <= dataPath:TEST.port10
+HEX3[6] <= dataPath:TEST.port10
+
+
+|Lab7B|dataPath:TEST
+CLOCK_50 => CLOCK_50.IN1
+reset => reset.IN2
+load => load.IN1
+displaySignal[0] => Mux0.IN5
+displaySignal[0] => Mux1.IN5
+displaySignal[0] => Mux2.IN5
+displaySignal[0] => Decoder0.IN1
+displaySignal[0] => Mux3.IN4
+displaySignal[0] => Mux4.IN4
+displaySignal[0] => Mux5.IN4
+displaySignal[0] => Mux6.IN4
+displaySignal[0] => Mux7.IN4
+displaySignal[0] => Mux8.IN4
+displaySignal[1] => Mux0.IN4
+displaySignal[1] => Mux1.IN4
+displaySignal[1] => Mux2.IN4
+displaySignal[1] => Decoder0.IN0
+displaySignal[1] => Mux3.IN3
+displaySignal[1] => Mux4.IN3
+displaySignal[1] => Mux5.IN3
+displaySignal[1] => Mux6.IN3
+displaySignal[1] => Mux7.IN3
+displaySignal[1] => Mux8.IN3
+displaySignal[1] => displayChosen2[0].DATAIN
+twentyToLoad => tensValue[1].IN1
+twentyToLoad => tensValue[0].IN1
+counterNotZero <= countDown:counter.port4
+counterNotFive <= countDown:counter.port5
+HEX0[0] <= seg7DisplayforLast:rightHEX.port1
+HEX0[1] <= seg7DisplayforLast:rightHEX.port1
+HEX0[2] <= seg7DisplayforLast:rightHEX.port1
+HEX0[3] <= seg7DisplayforLast:rightHEX.port1
+HEX0[4] <= seg7DisplayforLast:rightHEX.port1
+HEX0[5] <= seg7DisplayforLast:rightHEX.port1
+HEX0[6] <= seg7DisplayforLast:rightHEX.port1
+HEX1[0] <= seg7DisplayforThird:thirdHEX.port1
+HEX1[1] <= seg7DisplayforThird:thirdHEX.port1
+HEX1[2] <= seg7DisplayforThird:thirdHEX.port1
+HEX1[3] <= seg7DisplayforThird:thirdHEX.port1
+HEX1[4] <= seg7DisplayforThird:thirdHEX.port1
+HEX1[5] <= seg7DisplayforThird:thirdHEX.port1
+HEX1[6] <= seg7DisplayforThird:thirdHEX.port1
+HEX2[0] <= seg7DisplayforSecond:secHEX.port1
+HEX2[1] <= seg7DisplayforSecond:secHEX.port1
+HEX2[2] <= seg7DisplayforSecond:secHEX.port1
+HEX2[3] <= seg7DisplayforSecond:secHEX.port1
+HEX2[4] <= seg7DisplayforSecond:secHEX.port1
+HEX2[5] <= seg7DisplayforSecond:secHEX.port1
+HEX2[6] <= seg7DisplayforSecond:secHEX.port1
+HEX3[0] <= seg7DisplayforFirst:leftHEX.port1
+HEX3[1] <= seg7DisplayforFirst:leftHEX.port1
+HEX3[2] <= seg7DisplayforFirst:leftHEX.port1
+HEX3[3] <= seg7DisplayforFirst:leftHEX.port1
+HEX3[4] <= seg7DisplayforFirst:leftHEX.port1
+HEX3[5] <= seg7DisplayforFirst:leftHEX.port1
+HEX3[6] <= seg7DisplayforFirst:leftHEX.port1
+
+
+|Lab7B|dataPath:TEST|oneSecClock:clock
+CLOCK_50 => clock~reg0.CLK
+CLOCK_50 => count25M[0].CLK
+CLOCK_50 => count25M[1].CLK
+CLOCK_50 => count25M[2].CLK
+CLOCK_50 => count25M[3].CLK
+CLOCK_50 => count25M[4].CLK
+CLOCK_50 => count25M[5].CLK
+CLOCK_50 => count25M[6].CLK
+CLOCK_50 => count25M[7].CLK
+CLOCK_50 => count25M[8].CLK
+CLOCK_50 => count25M[9].CLK
+CLOCK_50 => count25M[10].CLK
+CLOCK_50 => count25M[11].CLK
+CLOCK_50 => count25M[12].CLK
+CLOCK_50 => count25M[13].CLK
+CLOCK_50 => count25M[14].CLK
+CLOCK_50 => count25M[15].CLK
+CLOCK_50 => count25M[16].CLK
+CLOCK_50 => count25M[17].CLK
+CLOCK_50 => count25M[18].CLK
+CLOCK_50 => count25M[19].CLK
+CLOCK_50 => count25M[20].CLK
+CLOCK_50 => count25M[21].CLK
+CLOCK_50 => count25M[22].CLK
+CLOCK_50 => count25M[23].CLK
+CLOCK_50 => count25M[24].CLK
+reset => count25M[0].ACLR
+reset => count25M[1].ACLR
+reset => count25M[2].ACLR
+reset => count25M[3].ACLR
+reset => count25M[4].ACLR
+reset => count25M[5].ACLR
+reset => count25M[6].ACLR
+reset => count25M[7].ACLR
+reset => count25M[8].ACLR
+reset => count25M[9].ACLR
+reset => count25M[10].ACLR
+reset => count25M[11].ACLR
+reset => count25M[12].ACLR
+reset => count25M[13].ACLR
+reset => count25M[14].ACLR
+reset => count25M[15].ACLR
+reset => count25M[16].ACLR
+reset => count25M[17].ACLR
+reset => count25M[18].ACLR
+reset => count25M[19].ACLR
+reset => count25M[20].ACLR
+reset => count25M[21].ACLR
+reset => count25M[22].ACLR
+reset => count25M[23].ACLR
+reset => count25M[24].ACLR
+reset => clock~reg0.ENA
+clock <= clock~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7B|dataPath:TEST|countDown:counter
+myClock => tensDigit[0]~reg0.CLK
+myClock => tensDigit[1]~reg0.CLK
+myClock => unitDigit[0]~reg0.CLK
+myClock => unitDigit[1]~reg0.CLK
+myClock => unitDigit[2]~reg0.CLK
+myClock => unitDigit[3]~reg0.CLK
+reset => tensDigit[1].IN0
+reset => tensDigit[0]~reg0.ACLR
+reset => tensDigit[1]~reg0.ACLR
+reset => unitDigit[3].IN0
+load => tensDigit[1].IN1
+load => unitDigit[3].IN1
+tensValue[0] => tensDigit[0]~reg0.ADATA
+tensValue[1] => tensDigit[1]~reg0.ADATA
+counterNotZero <= counterNotZero.DB_MAX_OUTPUT_PORT_TYPE
+counterNotFive <= counterNotFive.DB_MAX_OUTPUT_PORT_TYPE
+unitDigit[0] <= unitDigit[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+unitDigit[1] <= unitDigit[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+unitDigit[2] <= unitDigit[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+unitDigit[3] <= unitDigit[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tensDigit[0] <= tensDigit[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tensDigit[1] <= tensDigit[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7B|dataPath:TEST|seg7DisplayforFirst:leftHEX
+Value[0] => Decoder0.IN1
+Value[0] => Display[6].DATAIN
+Value[0] => Display[2].DATAIN
+Value[1] => Decoder0.IN0
+Value[1] => Display[3].DATAIN
+Value[1] => Display[0].DATAIN
+Display[0] <= Value[1].DB_MAX_OUTPUT_PORT_TYPE
+Display[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Display[2] <= Value[0].DB_MAX_OUTPUT_PORT_TYPE
+Display[3] <= Value[1].DB_MAX_OUTPUT_PORT_TYPE
+Display[4] <= Display.DB_MAX_OUTPUT_PORT_TYPE
+Display[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Display[6] <= Value[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7B|dataPath:TEST|seg7DisplayforSecond:secHEX
+Value[0] => Equal0.IN3
+Value[0] => Equal1.IN3
+Value[1] => Equal0.IN2
+Value[1] => Equal1.IN2
+Display[0] <= <VCC>
+Display[1] <= <VCC>
+Display[2] <= <VCC>
+Display[3] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+Display[4] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+Display[5] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+Display[6] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7B|dataPath:TEST|seg7DisplayforThird:thirdHEX
+Value[0] => Decoder1.IN2
+Value[0] => Decoder2.IN1
+Value[1] => Decoder0.IN1
+Value[1] => Decoder1.IN1
+Value[2] => Decoder0.IN0
+Value[2] => Decoder1.IN0
+Value[2] => Decoder2.IN0
+Value[2] => Display[1].DATAIN
+Display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+Display[1] <= Value[2].DB_MAX_OUTPUT_PORT_TYPE
+Display[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Display[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+Display[4] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+Display[5] <= Display.DB_MAX_OUTPUT_PORT_TYPE
+Display[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7B|dataPath:TEST|seg7DisplayforLast:rightHEX
+Value[0] => Decoder0.IN3
+Value[1] => Decoder0.IN2
+Value[2] => Decoder0.IN1
+Value[3] => Decoder0.IN0
+Display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7B|controlUnit:integ
+CLOCK_50 => state~1.DATAIN
+reset => state~3.DATAIN
+x => Selector1.IN2
+x => Selector2.IN3
+x => Selector0.IN1
+x => Selector3.IN1
+counterNotZero => Selector1.IN3
+counterNotZero => Selector5.IN3
+counterNotZero => Selector3.IN3
+counterNotZero => Selector0.IN2
+counterNotZero => n_state.s2.DATAB
+counterNotZero => Selector2.IN1
+counterNotFive => Selector4.IN3
+counterNotFive => Selector5.IN1
+load <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+twentyToLoad <= twentyToLoad.DB_MAX_OUTPUT_PORT_TYPE
+stateD[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+stateD[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+stateD[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+displaySignal[0] <= displaySignal.DB_MAX_OUTPUT_PORT_TYPE
+displaySignal[1] <= displaySignal.DB_MAX_OUTPUT_PORT_TYPE
+hwy[0] <= hwy[0].DB_MAX_OUTPUT_PORT_TYPE
+hwy[1] <= hwy.DB_MAX_OUTPUT_PORT_TYPE
+cntry[0] <= cntry[0].DB_MAX_OUTPUT_PORT_TYPE
+cntry[1] <= cntry.DB_MAX_OUTPUT_PORT_TYPE
+
+

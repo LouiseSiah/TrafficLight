@@ -1,0 +1,630 @@
+Classic Timing Analyzer report for Lab7B
+Wed Aug 12 20:50:45 2015
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'CLOCK_50'
+  7. Clock Hold: 'CLOCK_50'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                         ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------------------------------+--------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                                               ; To                                                     ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------------------------------+--------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 6.426 ns                         ; KEY[0]                                             ; controlUnit:integ|state.s2b                            ; --         ; CLOCK_50 ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 15.367 ns                        ; dataPath:TEST|displayChosen3[0]                    ; HEX1[5]                                                ; CLOCK_50   ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 1.261 ns                         ; KEY[0]                                             ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; --         ; CLOCK_50 ; 0            ;
+; Clock Setup: 'CLOCK_50'      ; N/A                                      ; None          ; 58.34 MHz ( period = 17.140 ns ) ; dataPath:TEST|countDown:counter|tensDigit[1]~latch ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; 0            ;
+; Clock Hold: 'CLOCK_50'       ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; controlUnit:integ|state.s2a                        ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; CLOCK_50   ; CLOCK_50 ; 38           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                                    ;                                                        ;            ;          ; 38           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------------------------------+--------------------------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLOCK_50        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; KEY[0]          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLOCK_50'                                                                                                                                                                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                   ; To                                                     ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 58.34 MHz ( period = 17.140 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.757 ns                ;
+; N/A                                     ; 60.61 MHz ( period = 16.500 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.437 ns                ;
+; N/A                                     ; 61.05 MHz ( period = 16.380 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.377 ns                ;
+; N/A                                     ; 61.29 MHz ( period = 16.316 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.345 ns                ;
+; N/A                                     ; 61.31 MHz ( period = 16.310 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.342 ns                ;
+; N/A                                     ; 63.56 MHz ( period = 15.734 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.054 ns                ;
+; N/A                                     ; 63.57 MHz ( period = 15.730 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.052 ns                ;
+; N/A                                     ; 63.58 MHz ( period = 15.728 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.051 ns                ;
+; N/A                                     ; 69.70 MHz ( period = 14.348 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.441 ns                ;
+; N/A                                     ; 70.67 MHz ( period = 14.150 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.342 ns                ;
+; N/A                                     ; 70.67 MHz ( period = 14.150 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.342 ns                ;
+; N/A                                     ; 73.65 MHz ( period = 13.578 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.056 ns                ;
+; N/A                                     ; 73.70 MHz ( period = 13.568 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.051 ns                ;
+; N/A                                     ; 73.70 MHz ( period = 13.568 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.051 ns                ;
+; N/A                                     ; 97.33 MHz ( period = 10.274 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; dataPath:TEST|countDown:counter|unitDigit[0]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.992 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; dataPath:TEST|countDown:counter|unitDigit[0]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.607 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; dataPath:TEST|displayChosen3[1]                        ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.423 ns                ;
+; N/A                                     ; 113.05 MHz ( period = 8.846 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.278 ns                ;
+; N/A                                     ; 113.07 MHz ( period = 8.844 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; dataPath:TEST|countDown:counter|unitDigit[3]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.277 ns                ;
+; N/A                                     ; 113.15 MHz ( period = 8.838 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.274 ns                ;
+; N/A                                     ; 115.29 MHz ( period = 8.674 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; dataPath:TEST|displayChosen3[0]                        ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.186 ns                ;
+; N/A                                     ; 116.52 MHz ( period = 8.582 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.146 ns                ;
+; N/A                                     ; 126.94 MHz ( period = 7.878 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; dataPath:TEST|countDown:counter|unitDigit[3]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 1.794 ns                ;
+; N/A                                     ; 126.97 MHz ( period = 7.876 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 1.793 ns                ;
+; N/A                                     ; 139.88 MHz ( period = 7.149 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[2]           ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.242 ns                ;
+; N/A                                     ; 140.49 MHz ( period = 7.118 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[3]           ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.211 ns                ;
+; N/A                                     ; 141.24 MHz ( period = 7.080 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.173 ns                ;
+; N/A                                     ; 141.96 MHz ( period = 7.044 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.137 ns                ;
+; N/A                                     ; 142.61 MHz ( period = 7.012 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.105 ns                ;
+; N/A                                     ; 142.67 MHz ( period = 7.009 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 143.60 MHz ( period = 6.964 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[1]           ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.057 ns                ;
+; N/A                                     ; 146.01 MHz ( period = 6.849 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[1]           ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.942 ns                ;
+; N/A                                     ; 146.07 MHz ( period = 6.846 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[1]           ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.939 ns                ;
+; N/A                                     ; 146.46 MHz ( period = 6.828 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[0]           ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.921 ns                ;
+; N/A                                     ; 147.93 MHz ( period = 6.760 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.853 ns                ;
+; N/A                                     ; 148.68 MHz ( period = 6.726 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[3]           ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.819 ns                ;
+; N/A                                     ; 148.74 MHz ( period = 6.723 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[3]           ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.816 ns                ;
+; N/A                                     ; 148.83 MHz ( period = 6.719 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.812 ns                ;
+; N/A                                     ; 151.63 MHz ( period = 6.595 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[2]           ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.688 ns                ;
+; N/A                                     ; 151.70 MHz ( period = 6.592 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[2]           ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.685 ns                ;
+; N/A                                     ; 156.81 MHz ( period = 6.377 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.470 ns                ;
+; N/A                                     ; 156.89 MHz ( period = 6.374 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.467 ns                ;
+; N/A                                     ; 158.48 MHz ( period = 6.310 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[2]           ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.403 ns                ;
+; N/A                                     ; 160.41 MHz ( period = 6.234 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[1]           ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.327 ns                ;
+; N/A                                     ; 167.03 MHz ( period = 5.987 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[0]           ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.080 ns                ;
+; N/A                                     ; 168.66 MHz ( period = 5.929 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 168.66 MHz ( period = 5.929 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 168.83 MHz ( period = 5.923 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[0]           ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.016 ns                ;
+; N/A                                     ; 168.92 MHz ( period = 5.920 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[0]           ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.013 ns                ;
+; N/A                                     ; 171.09 MHz ( period = 5.845 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[3]           ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 1.938 ns                ;
+; N/A                                     ; 172.53 MHz ( period = 5.796 ns )                    ; controlUnit:integ|state.s2                             ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.477 ns                ;
+; N/A                                     ; 173.43 MHz ( period = 5.766 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[1]           ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.939 ns                ;
+; N/A                                     ; 173.43 MHz ( period = 5.766 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[1]           ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.939 ns                ;
+; N/A                                     ; 175.93 MHz ( period = 5.684 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.857 ns                ;
+; N/A                                     ; 177.21 MHz ( period = 5.643 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[3]           ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.816 ns                ;
+; N/A                                     ; 177.21 MHz ( period = 5.643 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.816 ns                ;
+; N/A                                     ; 177.21 MHz ( period = 5.643 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[3]           ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.816 ns                ;
+; N/A                                     ; 181.42 MHz ( period = 5.512 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[2]           ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.685 ns                ;
+; N/A                                     ; 181.42 MHz ( period = 5.512 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[2]           ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.685 ns                ;
+; N/A                                     ; 182.62 MHz ( period = 5.476 ns )                    ; controlUnit:integ|state.s2                             ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.157 ns                ;
+; N/A                                     ; 186.08 MHz ( period = 5.374 ns )                    ; controlUnit:integ|state.s0                             ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.055 ns                ;
+; N/A                                     ; 187.02 MHz ( period = 5.347 ns )                    ; controlUnit:integ|state.s2                             ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.028 ns                ;
+; N/A                                     ; 187.13 MHz ( period = 5.344 ns )                    ; controlUnit:integ|state.s2                             ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.025 ns                ;
+; N/A                                     ; 188.89 MHz ( period = 5.294 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.467 ns                ;
+; N/A                                     ; 188.89 MHz ( period = 5.294 ns )                    ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.467 ns                ;
+; N/A                                     ; 190.08 MHz ( period = 5.261 ns )                    ; controlUnit:integ|state.s3                             ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.942 ns                ;
+; N/A                                     ; 193.87 MHz ( period = 5.158 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[1]           ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.331 ns                ;
+; N/A                                     ; 197.86 MHz ( period = 5.054 ns )                    ; controlUnit:integ|state.s0                             ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.735 ns                ;
+; N/A                                     ; 201.45 MHz ( period = 4.964 ns )                    ; controlUnit:integ|state.s0                             ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.645 ns                ;
+; N/A                                     ; 201.57 MHz ( period = 4.961 ns )                    ; controlUnit:integ|state.s0                             ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.642 ns                ;
+; N/A                                     ; 202.39 MHz ( period = 4.941 ns )                    ; controlUnit:integ|state.s3                             ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.622 ns                ;
+; N/A                                     ; 206.14 MHz ( period = 4.851 ns )                    ; controlUnit:integ|state.s3                             ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.532 ns                ;
+; N/A                                     ; 206.27 MHz ( period = 4.848 ns )                    ; controlUnit:integ|state.s3                             ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.529 ns                ;
+; N/A                                     ; 206.61 MHz ( period = 4.840 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[0]           ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.013 ns                ;
+; N/A                                     ; 206.61 MHz ( period = 4.840 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[0]           ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 2.013 ns                ;
+; N/A                                     ; 209.69 MHz ( period = 4.769 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[3]           ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 1.942 ns                ;
+; N/A                                     ; 214.04 MHz ( period = 4.672 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[2]           ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 1.845 ns                ;
+; N/A                                     ; 215.38 MHz ( period = 4.643 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.402 ns                ;
+; N/A                                     ; 216.12 MHz ( period = 4.627 ns )                    ; controlUnit:integ|state.s2a                            ; controlUnit:integ|state.s2b                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.388 ns                ;
+; N/A                                     ; 217.82 MHz ( period = 4.591 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.350 ns                ;
+; N/A                                     ; 221.68 MHz ( period = 4.511 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.270 ns                ;
+; N/A                                     ; 222.67 MHz ( period = 4.491 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.250 ns                ;
+; N/A                                     ; 225.28 MHz ( period = 4.439 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.198 ns                ;
+; N/A                                     ; 226.96 MHz ( period = 4.406 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[3]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.165 ns                ;
+; N/A                                     ; 227.07 MHz ( period = 4.404 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.165 ns                ;
+; N/A                                     ; 227.27 MHz ( period = 4.400 ns )                    ; controlUnit:integ|state.s2                             ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.161 ns                ;
+; N/A                                     ; 228.05 MHz ( period = 4.385 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 228.78 MHz ( period = 4.371 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.132 ns                ;
+; N/A                                     ; 229.20 MHz ( period = 4.363 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.124 ns                ;
+; N/A                                     ; 229.41 MHz ( period = 4.359 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.118 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.104 ns                ;
+; N/A                                     ; 230.79 MHz ( period = 4.333 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.102 ns                ;
+; N/A                                     ; 230.95 MHz ( period = 4.330 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[17]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.091 ns                ;
+; N/A                                     ; 231.00 MHz ( period = 4.329 ns )                    ; dataPath:TEST|countDown:counter|unitDigit[0]           ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 1.502 ns                ;
+; N/A                                     ; 232.18 MHz ( period = 4.307 ns )                    ; controlUnit:integ|state.s2a                            ; controlUnit:integ|state.s2a                            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.068 ns                ;
+; N/A                                     ; 232.94 MHz ( period = 4.293 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.052 ns                ;
+; N/A                                     ; 233.43 MHz ( period = 4.284 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.045 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.033 ns                ;
+; N/A                                     ; 234.08 MHz ( period = 4.272 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.033 ns                ;
+; N/A                                     ; 234.52 MHz ( period = 4.264 ns )                    ; controlUnit:integ|state.s2                             ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.025 ns                ;
+; N/A                                     ; 234.52 MHz ( period = 4.264 ns )                    ; controlUnit:integ|state.s2                             ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.025 ns                ;
+; N/A                                     ; 234.96 MHz ( period = 4.256 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[4]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.015 ns                ;
+; N/A                                     ; 235.07 MHz ( period = 4.254 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[3]            ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.013 ns                ;
+; N/A                                     ; 235.13 MHz ( period = 4.253 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.022 ns                ;
+; N/A                                     ; 235.90 MHz ( period = 4.239 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.000 ns                ;
+; N/A                                     ; 235.90 MHz ( period = 4.239 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.000 ns                ;
+; N/A                                     ; 236.35 MHz ( period = 4.231 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.992 ns                ;
+; N/A                                     ; 236.35 MHz ( period = 4.231 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.992 ns                ;
+; N/A                                     ; 236.69 MHz ( period = 4.225 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.994 ns                ;
+; N/A                                     ; 236.85 MHz ( period = 4.222 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.981 ns                ;
+; N/A                                     ; 237.36 MHz ( period = 4.213 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.972 ns                ;
+; N/A                                     ; 238.21 MHz ( period = 4.198 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[17]           ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.959 ns                ;
+; N/A                                     ; 238.21 MHz ( period = 4.198 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[17]           ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.959 ns                ;
+; N/A                                     ; 239.29 MHz ( period = 4.179 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.938 ns                ;
+; N/A                                     ; 239.35 MHz ( period = 4.178 ns )                    ; controlUnit:integ|state.s2a                            ; controlUnit:integ|state.s1                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.939 ns                ;
+; N/A                                     ; 239.52 MHz ( period = 4.175 ns )                    ; controlUnit:integ|state.s2a                            ; controlUnit:integ|state.s4                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.936 ns                ;
+; N/A                                     ; 239.64 MHz ( period = 4.173 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.942 ns                ;
+; N/A                                     ; 239.64 MHz ( period = 4.173 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.934 ns                ;
+; N/A                                     ; 239.81 MHz ( period = 4.170 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.929 ns                ;
+; N/A                                     ; 241.08 MHz ( period = 4.148 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[3]            ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 241.31 MHz ( period = 4.144 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[5]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.903 ns                ;
+; N/A                                     ; 242.01 MHz ( period = 4.132 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.893 ns                ;
+; N/A                                     ; 242.19 MHz ( period = 4.129 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|clock                  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.133 ns                ;
+; N/A                                     ; 242.31 MHz ( period = 4.127 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.886 ns                ;
+; N/A                                     ; 243.43 MHz ( period = 4.108 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[3]            ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.867 ns                ;
+; N/A                                     ; 243.66 MHz ( period = 4.104 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[4]            ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.863 ns                ;
+; N/A                                     ; 243.72 MHz ( period = 4.103 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.854 ns                ;
+; N/A                                     ; 244.14 MHz ( period = 4.096 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|clock                  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.100 ns                ;
+; N/A                                     ; 244.32 MHz ( period = 4.093 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.862 ns                ;
+; N/A                                     ; 244.50 MHz ( period = 4.090 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.849 ns                ;
+; N/A                                     ; 244.62 MHz ( period = 4.088 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|clock                  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.092 ns                ;
+; N/A                                     ; 245.70 MHz ( period = 4.070 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.821 ns                ;
+; N/A                                     ; 245.76 MHz ( period = 4.069 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[13]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.820 ns                ;
+; N/A                                     ; 246.18 MHz ( period = 4.062 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.813 ns                ;
+; N/A                                     ; 246.49 MHz ( period = 4.057 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[12]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.818 ns                ;
+; N/A                                     ; 246.61 MHz ( period = 4.055 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[17]           ; dataPath:TEST|oneSecClock:clock|clock                  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 4.059 ns                ;
+; N/A                                     ; 247.10 MHz ( period = 4.047 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.806 ns                ;
+; N/A                                     ; 247.46 MHz ( period = 4.041 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.802 ns                ;
+; N/A                                     ; 247.46 MHz ( period = 4.041 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.802 ns                ;
+; N/A                                     ; 247.77 MHz ( period = 4.036 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[13]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.787 ns                ;
+; N/A                                     ; 248.20 MHz ( period = 4.029 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[17]           ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.780 ns                ;
+; N/A                                     ; 248.26 MHz ( period = 4.028 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[13]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.779 ns                ;
+; N/A                                     ; 248.39 MHz ( period = 4.026 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.797 ns                ;
+; N/A                                     ; 248.76 MHz ( period = 4.020 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[23]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.781 ns                ;
+; N/A                                     ; 249.75 MHz ( period = 4.004 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[13]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.765 ns                ;
+; N/A                                     ; 250.13 MHz ( period = 3.998 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[4]            ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.767 ns                ;
+; N/A                                     ; 250.31 MHz ( period = 3.995 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[17]           ; dataPath:TEST|oneSecClock:clock|count25M[13]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 250.31 MHz ( period = 3.995 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[0]            ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.764 ns                ;
+; N/A                                     ; 250.50 MHz ( period = 3.992 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[5]            ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.751 ns                ;
+; N/A                                     ; 250.75 MHz ( period = 3.988 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[3]            ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.757 ns                ;
+; N/A                                     ; 250.88 MHz ( period = 3.986 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.747 ns                ;
+; N/A                                     ; 250.94 MHz ( period = 3.985 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[7]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.744 ns                ;
+; N/A                                     ; 250.94 MHz ( period = 3.985 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[3]            ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.744 ns                ;
+; N/A                                     ; 251.38 MHz ( period = 3.978 ns )                    ; controlUnit:integ|state.s0                             ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.739 ns                ;
+; N/A                                     ; 251.45 MHz ( period = 3.977 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[11]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.748 ns                ;
+; N/A                                     ; 252.65 MHz ( period = 3.958 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[4]            ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.717 ns                ;
+; N/A                                     ; 252.84 MHz ( period = 3.955 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.726 ns                ;
+; N/A                                     ; 253.61 MHz ( period = 3.943 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[1]            ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.712 ns                ;
+; N/A                                     ; 253.68 MHz ( period = 3.942 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[3]            ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.701 ns                ;
+; N/A                                     ; 254.00 MHz ( period = 3.937 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[8]            ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.696 ns                ;
+; N/A                                     ; 254.13 MHz ( period = 3.935 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.686 ns                ;
+; N/A                                     ; 255.56 MHz ( period = 3.913 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[11]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.664 ns                ;
+; N/A                                     ; 255.69 MHz ( period = 3.911 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.662 ns                ;
+; N/A                                     ; 255.82 MHz ( period = 3.909 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[12]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.660 ns                ;
+; N/A                                     ; 256.02 MHz ( period = 3.906 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.657 ns                ;
+; N/A                                     ; 256.02 MHz ( period = 3.906 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.677 ns                ;
+; N/A                                     ; 256.08 MHz ( period = 3.905 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[12]           ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.666 ns                ;
+; N/A                                     ; 256.08 MHz ( period = 3.905 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.656 ns                ;
+; N/A                                     ; 256.21 MHz ( period = 3.903 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[11]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.664 ns                ;
+; N/A                                     ; 256.28 MHz ( period = 3.902 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.653 ns                ;
+; N/A                                     ; 256.41 MHz ( period = 3.900 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.651 ns                ;
+; N/A                                     ; 256.54 MHz ( period = 3.898 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; dataPath:TEST|oneSecClock:clock|clock                  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.902 ns                ;
+; N/A                                     ; 256.81 MHz ( period = 3.894 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.645 ns                ;
+; N/A                                     ; 257.20 MHz ( period = 3.888 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.649 ns                ;
+; N/A                                     ; 257.20 MHz ( period = 3.888 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[23]           ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.649 ns                ;
+; N/A                                     ; 257.20 MHz ( period = 3.888 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[23]           ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.649 ns                ;
+; N/A                                     ; 257.33 MHz ( period = 3.886 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[5]            ; dataPath:TEST|oneSecClock:clock|count25M[24]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.655 ns                ;
+; N/A                                     ; 257.33 MHz ( period = 3.886 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[12]           ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.657 ns                ;
+; N/A                                     ; 257.33 MHz ( period = 3.886 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[7]            ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.655 ns                ;
+; N/A                                     ; 257.67 MHz ( period = 3.881 ns )                    ; controlUnit:integ|state.s0                             ; controlUnit:integ|state.s0                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.642 ns                ;
+; N/A                                     ; 257.67 MHz ( period = 3.881 ns )                    ; controlUnit:integ|state.s0                             ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.642 ns                ;
+; N/A                                     ; 257.73 MHz ( period = 3.880 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[11]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.631 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.629 ns                ;
+; N/A                                     ; 258.00 MHz ( period = 3.876 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[12]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.627 ns                ;
+; N/A                                     ; 258.20 MHz ( period = 3.873 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.624 ns                ;
+; N/A                                     ; 258.26 MHz ( period = 3.872 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[11]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.623 ns                ;
+; N/A                                     ; 258.26 MHz ( period = 3.872 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.623 ns                ;
+; N/A                                     ; 258.26 MHz ( period = 3.872 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.623 ns                ;
+; N/A                                     ; 258.40 MHz ( period = 3.870 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.621 ns                ;
+; N/A                                     ; 258.53 MHz ( period = 3.868 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[12]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.619 ns                ;
+; N/A                                     ; 258.60 MHz ( period = 3.867 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.618 ns                ;
+; N/A                                     ; 258.67 MHz ( period = 3.866 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; dataPath:TEST|oneSecClock:clock|count25M[22]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.637 ns                ;
+; N/A                                     ; 258.73 MHz ( period = 3.865 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.616 ns                ;
+; N/A                                     ; 258.73 MHz ( period = 3.865 ns )                    ; controlUnit:integ|state.s3                             ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.626 ns                ;
+; N/A                                     ; 258.80 MHz ( period = 3.864 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[14]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.615 ns                ;
+; N/A                                     ; 258.87 MHz ( period = 3.863 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[6]            ; dataPath:TEST|oneSecClock:clock|count25M[16]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.624 ns                ;
+; N/A                                     ; 258.87 MHz ( period = 3.863 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[2]            ; dataPath:TEST|oneSecClock:clock|count25M[21]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.632 ns                ;
+; N/A                                     ; 259.00 MHz ( period = 3.861 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[17]           ; dataPath:TEST|oneSecClock:clock|count25M[20]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.612 ns                ;
+; N/A                                     ; 259.13 MHz ( period = 3.859 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[15]           ; dataPath:TEST|oneSecClock:clock|count25M[19]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.610 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; dataPath:TEST|oneSecClock:clock|count25M[13]           ; dataPath:TEST|oneSecClock:clock|count25M[18]           ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 3.613 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                        ;                                                        ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'CLOCK_50'                                                                                                                                                                                                                       ;
++------------------------------------------+-----------------------------+--------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                        ; To                                                     ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------------------+--------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2a ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.351 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2a ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.353 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen4[3]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.208 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen3[2]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.217 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen1[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.527 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen1[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.564 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen4[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.569 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen2[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.572 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2  ; dataPath:TEST|countDown:counter|tensDigit[0]~latch     ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.440 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2  ; dataPath:TEST|countDown:counter|tensDigit[1]~latch     ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.442 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen2[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.051 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen2[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.052 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen4[3]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.084 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen1[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.088 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen1[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.090 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen4[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.095 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen3[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.193 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen4[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen4[2]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.433 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; dataPath:TEST|displayChosen3[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.437 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen3[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.543 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen2[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.737 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen4[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.820 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen4[2]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.831 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s3  ; dataPath:TEST|displayChosen3[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.887 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen4[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.125 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen2[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.128 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen4[3]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.129 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen1[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.130 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen1[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.130 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen3[1]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.228 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s1  ; controlUnit:integ|state.s2                             ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 0.793 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2a ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 3.387 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2a ; dataPath:TEST|countDown:counter|unitDigit[3]           ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 3.388 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen4[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.379 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen4[2]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.516 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s2b ; controlUnit:integ|state.s3                             ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 1.023 ns                 ;
+; Not operational: Clock Skew > Data Delay ; controlUnit:integ|state.s0  ; dataPath:TEST|displayChosen3[0]                        ; CLOCK_50   ; CLOCK_50 ; None                       ; None                       ; 2.572 ns                 ;
++------------------------------------------+-----------------------------+--------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                            ;
++-------+--------------+------------+--------+--------------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                                                     ; To Clock ;
++-------+--------------+------------+--------+--------------------------------------------------------+----------+
+; N/A   ; None         ; 6.426 ns   ; KEY[0] ; controlUnit:integ|state.s2b                            ; CLOCK_50 ;
+; N/A   ; None         ; 6.106 ns   ; KEY[0] ; controlUnit:integ|state.s2a                            ; CLOCK_50 ;
+; N/A   ; None         ; 6.009 ns   ; KEY[0] ; controlUnit:integ|state.s1                             ; CLOCK_50 ;
+; N/A   ; None         ; 6.006 ns   ; KEY[0] ; controlUnit:integ|state.s4                             ; CLOCK_50 ;
+; N/A   ; None         ; 5.950 ns   ; KEY[0] ; dataPath:TEST|oneSecClock:clock|clock                  ; CLOCK_50 ;
+; N/A   ; None         ; 5.030 ns   ; KEY[0] ; controlUnit:integ|state.s2                             ; CLOCK_50 ;
+; N/A   ; None         ; 4.926 ns   ; KEY[0] ; controlUnit:integ|state.s0                             ; CLOCK_50 ;
+; N/A   ; None         ; 4.926 ns   ; KEY[0] ; controlUnit:integ|state.s3                             ; CLOCK_50 ;
+; N/A   ; None         ; 2.993 ns   ; KEY[0] ; dataPath:TEST|countDown:counter|unitDigit[0]           ; CLOCK_50 ;
+; N/A   ; None         ; 2.430 ns   ; KEY[0] ; dataPath:TEST|displayChosen3[1]                        ; CLOCK_50 ;
+; N/A   ; None         ; 2.279 ns   ; KEY[0] ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; CLOCK_50 ;
+; N/A   ; None         ; 2.278 ns   ; KEY[0] ; dataPath:TEST|countDown:counter|unitDigit[3]           ; CLOCK_50 ;
+; N/A   ; None         ; 2.275 ns   ; KEY[0] ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; CLOCK_50 ;
+; N/A   ; None         ; 2.188 ns   ; KEY[0] ; dataPath:TEST|displayChosen3[0]                        ; CLOCK_50 ;
+; N/A   ; None         ; 1.851 ns   ; SW[9]  ; controlUnit:integ|state.s1                             ; CLOCK_50 ;
+; N/A   ; None         ; 1.236 ns   ; SW[9]  ; controlUnit:integ|state.s4                             ; CLOCK_50 ;
+; N/A   ; None         ; 0.157 ns   ; SW[9]  ; controlUnit:integ|state.s3                             ; CLOCK_50 ;
+; N/A   ; None         ; 0.156 ns   ; SW[9]  ; controlUnit:integ|state.s0                             ; CLOCK_50 ;
++-------+--------------+------------+--------+--------------------------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------+
+; tco                                                                                        ;
++-------+--------------+------------+---------------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                            ; To      ; From Clock ;
++-------+--------------+------------+---------------------------------+---------+------------+
+; N/A   ; None         ; 15.367 ns  ; dataPath:TEST|displayChosen3[0] ; HEX1[5] ; CLOCK_50   ;
+; N/A   ; None         ; 15.364 ns  ; dataPath:TEST|displayChosen4[2] ; HEX0[5] ; CLOCK_50   ;
+; N/A   ; None         ; 15.363 ns  ; dataPath:TEST|displayChosen4[2] ; HEX0[6] ; CLOCK_50   ;
+; N/A   ; None         ; 15.359 ns  ; dataPath:TEST|displayChosen4[1] ; HEX0[6] ; CLOCK_50   ;
+; N/A   ; None         ; 15.358 ns  ; dataPath:TEST|displayChosen4[1] ; HEX0[5] ; CLOCK_50   ;
+; N/A   ; None         ; 15.335 ns  ; dataPath:TEST|displayChosen3[0] ; HEX1[4] ; CLOCK_50   ;
+; N/A   ; None         ; 15.324 ns  ; dataPath:TEST|displayChosen4[1] ; HEX0[1] ; CLOCK_50   ;
+; N/A   ; None         ; 15.321 ns  ; dataPath:TEST|displayChosen4[2] ; HEX0[1] ; CLOCK_50   ;
+; N/A   ; None         ; 15.314 ns  ; dataPath:TEST|displayChosen4[3] ; HEX0[6] ; CLOCK_50   ;
+; N/A   ; None         ; 15.308 ns  ; dataPath:TEST|displayChosen4[3] ; HEX0[5] ; CLOCK_50   ;
+; N/A   ; None         ; 15.282 ns  ; dataPath:TEST|displayChosen4[3] ; HEX0[1] ; CLOCK_50   ;
+; N/A   ; None         ; 15.266 ns  ; dataPath:TEST|displayChosen3[0] ; HEX1[2] ; CLOCK_50   ;
+; N/A   ; None         ; 15.246 ns  ; dataPath:TEST|displayChosen4[0] ; HEX0[6] ; CLOCK_50   ;
+; N/A   ; None         ; 15.245 ns  ; dataPath:TEST|displayChosen3[0] ; HEX1[0] ; CLOCK_50   ;
+; N/A   ; None         ; 15.244 ns  ; dataPath:TEST|displayChosen4[0] ; HEX0[5] ; CLOCK_50   ;
+; N/A   ; None         ; 15.206 ns  ; dataPath:TEST|displayChosen4[0] ; HEX0[1] ; CLOCK_50   ;
+; N/A   ; None         ; 15.195 ns  ; dataPath:TEST|displayChosen3[1] ; HEX1[6] ; CLOCK_50   ;
+; N/A   ; None         ; 15.137 ns  ; dataPath:TEST|displayChosen3[1] ; HEX1[5] ; CLOCK_50   ;
+; N/A   ; None         ; 15.094 ns  ; dataPath:TEST|displayChosen3[2] ; HEX1[6] ; CLOCK_50   ;
+; N/A   ; None         ; 15.073 ns  ; dataPath:TEST|displayChosen3[1] ; HEX1[2] ; CLOCK_50   ;
+; N/A   ; None         ; 15.039 ns  ; dataPath:TEST|displayChosen3[2] ; HEX1[5] ; CLOCK_50   ;
+; N/A   ; None         ; 15.029 ns  ; dataPath:TEST|displayChosen4[2] ; HEX0[4] ; CLOCK_50   ;
+; N/A   ; None         ; 15.026 ns  ; dataPath:TEST|displayChosen4[1] ; HEX0[4] ; CLOCK_50   ;
+; N/A   ; None         ; 15.016 ns  ; dataPath:TEST|displayChosen3[1] ; HEX1[0] ; CLOCK_50   ;
+; N/A   ; None         ; 15.015 ns  ; dataPath:TEST|displayChosen4[1] ; HEX0[2] ; CLOCK_50   ;
+; N/A   ; None         ; 15.014 ns  ; dataPath:TEST|displayChosen4[2] ; HEX0[2] ; CLOCK_50   ;
+; N/A   ; None         ; 15.013 ns  ; dataPath:TEST|displayChosen4[1] ; HEX0[3] ; CLOCK_50   ;
+; N/A   ; None         ; 15.007 ns  ; dataPath:TEST|displayChosen4[2] ; HEX0[3] ; CLOCK_50   ;
+; N/A   ; None         ; 15.005 ns  ; dataPath:TEST|displayChosen3[2] ; HEX1[4] ; CLOCK_50   ;
+; N/A   ; None         ; 14.995 ns  ; dataPath:TEST|displayChosen4[1] ; HEX0[0] ; CLOCK_50   ;
+; N/A   ; None         ; 14.984 ns  ; dataPath:TEST|displayChosen4[2] ; HEX0[0] ; CLOCK_50   ;
+; N/A   ; None         ; 14.977 ns  ; dataPath:TEST|displayChosen4[3] ; HEX0[4] ; CLOCK_50   ;
+; N/A   ; None         ; 14.974 ns  ; dataPath:TEST|displayChosen3[2] ; HEX1[2] ; CLOCK_50   ;
+; N/A   ; None         ; 14.972 ns  ; dataPath:TEST|displayChosen4[3] ; HEX0[2] ; CLOCK_50   ;
+; N/A   ; None         ; 14.971 ns  ; dataPath:TEST|displayChosen4[3] ; HEX0[3] ; CLOCK_50   ;
+; N/A   ; None         ; 14.952 ns  ; dataPath:TEST|displayChosen4[3] ; HEX0[0] ; CLOCK_50   ;
+; N/A   ; None         ; 14.917 ns  ; dataPath:TEST|displayChosen3[2] ; HEX1[0] ; CLOCK_50   ;
+; N/A   ; None         ; 14.913 ns  ; dataPath:TEST|displayChosen4[0] ; HEX0[4] ; CLOCK_50   ;
+; N/A   ; None         ; 14.896 ns  ; dataPath:TEST|displayChosen4[0] ; HEX0[2] ; CLOCK_50   ;
+; N/A   ; None         ; 14.891 ns  ; dataPath:TEST|displayChosen4[0] ; HEX0[3] ; CLOCK_50   ;
+; N/A   ; None         ; 14.871 ns  ; dataPath:TEST|displayChosen4[0] ; HEX0[0] ; CLOCK_50   ;
+; N/A   ; None         ; 14.848 ns  ; dataPath:TEST|displayChosen2[1] ; HEX2[5] ; CLOCK_50   ;
+; N/A   ; None         ; 14.813 ns  ; dataPath:TEST|displayChosen2[0] ; HEX2[5] ; CLOCK_50   ;
+; N/A   ; None         ; 14.761 ns  ; dataPath:TEST|displayChosen2[1] ; HEX2[3] ; CLOCK_50   ;
+; N/A   ; None         ; 14.726 ns  ; dataPath:TEST|displayChosen2[0] ; HEX2[3] ; CLOCK_50   ;
+; N/A   ; None         ; 14.644 ns  ; dataPath:TEST|displayChosen3[0] ; HEX1[3] ; CLOCK_50   ;
+; N/A   ; None         ; 14.415 ns  ; dataPath:TEST|displayChosen3[1] ; HEX1[3] ; CLOCK_50   ;
+; N/A   ; None         ; 14.316 ns  ; dataPath:TEST|displayChosen3[2] ; HEX1[3] ; CLOCK_50   ;
+; N/A   ; None         ; 14.278 ns  ; dataPath:TEST|displayChosen1[1] ; HEX3[1] ; CLOCK_50   ;
+; N/A   ; None         ; 14.134 ns  ; dataPath:TEST|displayChosen1[0] ; HEX3[1] ; CLOCK_50   ;
+; N/A   ; None         ; 13.989 ns  ; dataPath:TEST|displayChosen1[1] ; HEX3[5] ; CLOCK_50   ;
+; N/A   ; None         ; 13.843 ns  ; dataPath:TEST|displayChosen1[0] ; HEX3[5] ; CLOCK_50   ;
+; N/A   ; None         ; 13.718 ns  ; dataPath:TEST|displayChosen1[1] ; HEX3[4] ; CLOCK_50   ;
+; N/A   ; None         ; 13.571 ns  ; dataPath:TEST|displayChosen1[0] ; HEX3[4] ; CLOCK_50   ;
+; N/A   ; None         ; 12.860 ns  ; dataPath:TEST|displayChosen2[1] ; HEX2[6] ; CLOCK_50   ;
+; N/A   ; None         ; 12.855 ns  ; dataPath:TEST|displayChosen2[1] ; HEX2[4] ; CLOCK_50   ;
+; N/A   ; None         ; 12.417 ns  ; dataPath:TEST|displayChosen1[1] ; HEX3[3] ; CLOCK_50   ;
+; N/A   ; None         ; 12.404 ns  ; dataPath:TEST|displayChosen1[1] ; HEX3[0] ; CLOCK_50   ;
+; N/A   ; None         ; 12.124 ns  ; dataPath:TEST|displayChosen1[0] ; HEX3[2] ; CLOCK_50   ;
+; N/A   ; None         ; 11.954 ns  ; dataPath:TEST|displayChosen1[0] ; HEX3[6] ; CLOCK_50   ;
+; N/A   ; None         ; 11.891 ns  ; controlUnit:integ|state.s2      ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 11.803 ns  ; dataPath:TEST|displayChosen3[2] ; HEX1[1] ; CLOCK_50   ;
+; N/A   ; None         ; 11.345 ns  ; controlUnit:integ|state.s3      ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 11.307 ns  ; controlUnit:integ|state.s3      ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 11.208 ns  ; controlUnit:integ|state.s0      ; LEDG[7] ; CLOCK_50   ;
+; N/A   ; None         ; 10.933 ns  ; controlUnit:integ|state.s3      ; LEDG[5] ; CLOCK_50   ;
+; N/A   ; None         ; 10.186 ns  ; controlUnit:integ|state.s1      ; LEDG[7] ; CLOCK_50   ;
+; N/A   ; None         ; 10.122 ns  ; controlUnit:integ|state.s4      ; LEDG[2] ; CLOCK_50   ;
+; N/A   ; None         ; 10.055 ns  ; controlUnit:integ|state.s4      ; LEDG[5] ; CLOCK_50   ;
+; N/A   ; None         ; 9.825 ns   ; controlUnit:integ|state.s1      ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 9.523 ns   ; controlUnit:integ|state.s2a     ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 9.509 ns   ; controlUnit:integ|state.s2b     ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 9.225 ns   ; controlUnit:integ|state.s2b     ; LEDG[2] ; CLOCK_50   ;
+; N/A   ; None         ; 9.186 ns   ; controlUnit:integ|state.s2a     ; LEDG[2] ; CLOCK_50   ;
+; N/A   ; None         ; 8.287 ns   ; controlUnit:integ|state.s4      ; LEDG[4] ; CLOCK_50   ;
+; N/A   ; None         ; 8.265 ns   ; controlUnit:integ|state.s1      ; LEDG[6] ; CLOCK_50   ;
++-------+--------------+------------+---------------------------------+---------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                   ;
++---------------+-------------+-----------+--------+--------------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                                                     ; To Clock ;
++---------------+-------------+-----------+--------+--------------------------------------------------------+----------+
+; N/A           ; None        ; 1.261 ns  ; KEY[0] ; dataPath:TEST|countDown:counter|tensDigit[1]~_emulated ; CLOCK_50 ;
+; N/A           ; None        ; 1.260 ns  ; KEY[0] ; dataPath:TEST|countDown:counter|unitDigit[3]           ; CLOCK_50 ;
+; N/A           ; None        ; 0.908 ns  ; KEY[0] ; dataPath:TEST|countDown:counter|tensDigit[0]~_emulated ; CLOCK_50 ;
+; N/A           ; None        ; 0.862 ns  ; KEY[0] ; dataPath:TEST|displayChosen3[0]                        ; CLOCK_50 ;
+; N/A           ; None        ; 0.627 ns  ; KEY[0] ; dataPath:TEST|displayChosen3[1]                        ; CLOCK_50 ;
+; N/A           ; None        ; 0.447 ns  ; KEY[0] ; dataPath:TEST|countDown:counter|unitDigit[0]           ; CLOCK_50 ;
+; N/A           ; None        ; 0.092 ns  ; SW[9]  ; controlUnit:integ|state.s0                             ; CLOCK_50 ;
+; N/A           ; None        ; 0.091 ns  ; SW[9]  ; controlUnit:integ|state.s3                             ; CLOCK_50 ;
+; N/A           ; None        ; -0.988 ns ; SW[9]  ; controlUnit:integ|state.s4                             ; CLOCK_50 ;
+; N/A           ; None        ; -1.583 ns ; KEY[0] ; controlUnit:integ|state.s0                             ; CLOCK_50 ;
+; N/A           ; None        ; -1.583 ns ; KEY[0] ; controlUnit:integ|state.s3                             ; CLOCK_50 ;
+; N/A           ; None        ; -1.590 ns ; KEY[0] ; controlUnit:integ|state.s2                             ; CLOCK_50 ;
+; N/A           ; None        ; -1.603 ns ; SW[9]  ; controlUnit:integ|state.s1                             ; CLOCK_50 ;
+; N/A           ; None        ; -2.662 ns ; KEY[0] ; controlUnit:integ|state.s2b                            ; CLOCK_50 ;
+; N/A           ; None        ; -2.663 ns ; KEY[0] ; controlUnit:integ|state.s4                             ; CLOCK_50 ;
+; N/A           ; None        ; -2.666 ns ; KEY[0] ; controlUnit:integ|state.s1                             ; CLOCK_50 ;
+; N/A           ; None        ; -2.666 ns ; KEY[0] ; controlUnit:integ|state.s2a                            ; CLOCK_50 ;
+; N/A           ; None        ; -5.702 ns ; KEY[0] ; dataPath:TEST|oneSecClock:clock|clock                  ; CLOCK_50 ;
++---------------+-------------+-----------+--------+--------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Wed Aug 12 20:50:44 2015
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Lab7Bteset2 -c Lab7B --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "dataPath:TEST|countDown:counter|tensDigit[0]~latch" is a latch
+    Warning: Node "dataPath:TEST|countDown:counter|tensDigit[1]~latch" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLOCK_50" is an undefined clock
+    Info: Assuming node "KEY[0]" is a latch enable. Will not compute fmax for this pin.
+Warning: Found 5 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "controlUnit:integ|state.s3" as buffer
+    Info: Detected ripple clock "controlUnit:integ|state.s2" as buffer
+    Info: Detected ripple clock "dataPath:TEST|oneSecClock:clock|clock" as buffer
+    Info: Detected gated clock "dataPath:TEST|countDown:counter|tensDigit[1]~4" as buffer
+    Info: Detected ripple clock "controlUnit:integ|state.s0" as buffer
+Info: Clock "CLOCK_50" has Internal fmax of 58.34 MHz between source register "dataPath:TEST|countDown:counter|tensDigit[1]~latch" and destination register "controlUnit:integ|state.s2b" (period= 17.14 ns)
+    Info: + Longest register to register delay is 2.757 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X46_Y21_N26; Fanout = 2; REG Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~latch'
+        Info: 2: + IC(0.311 ns) + CELL(0.178 ns) = 0.489 ns; Loc. = LCCOMB_X46_Y21_N12; Fanout = 1; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~tail_lut'
+        Info: 3: + IC(0.293 ns) + CELL(0.178 ns) = 0.960 ns; Loc. = LCCOMB_X46_Y21_N10; Fanout = 7; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~head_lut'
+        Info: 4: + IC(0.559 ns) + CELL(0.322 ns) = 1.841 ns; Loc. = LCCOMB_X46_Y21_N14; Fanout = 1; COMB Node = 'controlUnit:integ|Selector5~1'
+        Info: 5: + IC(0.299 ns) + CELL(0.521 ns) = 2.661 ns; Loc. = LCCOMB_X46_Y21_N24; Fanout = 1; COMB Node = 'controlUnit:integ|Selector5~2'
+        Info: 6: + IC(0.000 ns) + CELL(0.096 ns) = 2.757 ns; Loc. = LCFF_X46_Y21_N25; Fanout = 11; REG Node = 'controlUnit:integ|state.s2b'
+        Info: Total cell delay = 1.295 ns ( 46.97 % )
+        Info: Total interconnect delay = 1.462 ns ( 53.03 % )
+    Info: - Smallest clock skew is -5.851 ns
+        Info: + Shortest clock path from clock "CLOCK_50" to destination register is 2.853 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 5; CLK Node = 'CLOCK_50'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 29; COMB Node = 'CLOCK_50~clkctrl'
+            Info: 3: + IC(0.987 ns) + CELL(0.602 ns) = 2.853 ns; Loc. = LCFF_X46_Y21_N25; Fanout = 11; REG Node = 'controlUnit:integ|state.s2b'
+            Info: Total cell delay = 1.628 ns ( 57.06 % )
+            Info: Total interconnect delay = 1.225 ns ( 42.94 % )
+        Info: - Longest clock path from clock "CLOCK_50" to source register is 8.704 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 5; CLK Node = 'CLOCK_50'
+            Info: 2: + IC(2.305 ns) + CELL(0.879 ns) = 4.210 ns; Loc. = LCFF_X46_Y21_N21; Fanout = 12; REG Node = 'controlUnit:integ|state.s0'
+            Info: 3: + IC(0.591 ns) + CELL(0.521 ns) = 5.322 ns; Loc. = LCCOMB_X45_Y21_N6; Fanout = 4; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~4'
+            Info: 4: + IC(1.805 ns) + CELL(0.000 ns) = 7.127 ns; Loc. = CLKCTRL_G11; Fanout = 2; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~4clkctrl'
+            Info: 5: + IC(1.399 ns) + CELL(0.178 ns) = 8.704 ns; Loc. = LCCOMB_X46_Y21_N26; Fanout = 2; REG Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~latch'
+            Info: Total cell delay = 2.604 ns ( 29.92 % )
+            Info: Total interconnect delay = 6.100 ns ( 70.08 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Warning: Circuit may not operate. Detected 38 non-operational path(s) clocked by clock "CLOCK_50" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "controlUnit:integ|state.s2a" and destination pin or register "dataPath:TEST|countDown:counter|tensDigit[0]~latch" for clock "CLOCK_50" (Hold time is 3.223 ns)
+    Info: + Largest clock skew is 5.851 ns
+        Info: + Longest clock path from clock "CLOCK_50" to destination register is 8.704 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 5; CLK Node = 'CLOCK_50'
+            Info: 2: + IC(2.305 ns) + CELL(0.879 ns) = 4.210 ns; Loc. = LCFF_X46_Y21_N21; Fanout = 12; REG Node = 'controlUnit:integ|state.s0'
+            Info: 3: + IC(0.591 ns) + CELL(0.521 ns) = 5.322 ns; Loc. = LCCOMB_X45_Y21_N6; Fanout = 4; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~4'
+            Info: 4: + IC(1.805 ns) + CELL(0.000 ns) = 7.127 ns; Loc. = CLKCTRL_G11; Fanout = 2; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~4clkctrl'
+            Info: 5: + IC(1.399 ns) + CELL(0.178 ns) = 8.704 ns; Loc. = LCCOMB_X46_Y21_N30; Fanout = 2; REG Node = 'dataPath:TEST|countDown:counter|tensDigit[0]~latch'
+            Info: Total cell delay = 2.604 ns ( 29.92 % )
+            Info: Total interconnect delay = 6.100 ns ( 70.08 % )
+        Info: - Shortest clock path from clock "CLOCK_50" to source register is 2.853 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 5; CLK Node = 'CLOCK_50'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 29; COMB Node = 'CLOCK_50~clkctrl'
+            Info: 3: + IC(0.987 ns) + CELL(0.602 ns) = 2.853 ns; Loc. = LCFF_X46_Y21_N9; Fanout = 5; REG Node = 'controlUnit:integ|state.s2a'
+            Info: Total cell delay = 1.628 ns ( 57.06 % )
+            Info: Total interconnect delay = 1.225 ns ( 42.94 % )
+    Info: - Micro clock to output delay of source is 0.277 ns
+    Info: - Shortest register to register delay is 2.351 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X46_Y21_N9; Fanout = 5; REG Node = 'controlUnit:integ|state.s2a'
+        Info: 2: + IC(0.959 ns) + CELL(0.178 ns) = 1.137 ns; Loc. = LCCOMB_X45_Y19_N24; Fanout = 4; COMB Node = 'controlUnit:integ|twentyToLoad'
+        Info: 3: + IC(0.892 ns) + CELL(0.322 ns) = 2.351 ns; Loc. = LCCOMB_X46_Y21_N30; Fanout = 2; REG Node = 'dataPath:TEST|countDown:counter|tensDigit[0]~latch'
+        Info: Total cell delay = 0.500 ns ( 21.27 % )
+        Info: Total interconnect delay = 1.851 ns ( 78.73 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "controlUnit:integ|state.s2b" (data pin = "KEY[0]", clock pin = "CLOCK_50") is 6.426 ns
+    Info: + Longest pin to register delay is 9.317 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.864 ns) = 0.864 ns; Loc. = PIN_R22; Fanout = 40; CLK Node = 'KEY[0]'
+        Info: 2: + IC(6.135 ns) + CELL(0.521 ns) = 7.520 ns; Loc. = LCCOMB_X46_Y21_N10; Fanout = 7; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~head_lut'
+        Info: 3: + IC(0.559 ns) + CELL(0.322 ns) = 8.401 ns; Loc. = LCCOMB_X46_Y21_N14; Fanout = 1; COMB Node = 'controlUnit:integ|Selector5~1'
+        Info: 4: + IC(0.299 ns) + CELL(0.521 ns) = 9.221 ns; Loc. = LCCOMB_X46_Y21_N24; Fanout = 1; COMB Node = 'controlUnit:integ|Selector5~2'
+        Info: 5: + IC(0.000 ns) + CELL(0.096 ns) = 9.317 ns; Loc. = LCFF_X46_Y21_N25; Fanout = 11; REG Node = 'controlUnit:integ|state.s2b'
+        Info: Total cell delay = 2.324 ns ( 24.94 % )
+        Info: Total interconnect delay = 6.993 ns ( 75.06 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "CLOCK_50" to destination register is 2.853 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 5; CLK Node = 'CLOCK_50'
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 29; COMB Node = 'CLOCK_50~clkctrl'
+        Info: 3: + IC(0.987 ns) + CELL(0.602 ns) = 2.853 ns; Loc. = LCFF_X46_Y21_N25; Fanout = 11; REG Node = 'controlUnit:integ|state.s2b'
+        Info: Total cell delay = 1.628 ns ( 57.06 % )
+        Info: Total interconnect delay = 1.225 ns ( 42.94 % )
+Info: tco from clock "CLOCK_50" to destination pin "HEX1[5]" through register "dataPath:TEST|displayChosen3[0]" is 15.367 ns
+    Info: + Longest clock path from clock "CLOCK_50" to source register is 6.515 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 5; CLK Node = 'CLOCK_50'
+        Info: 2: + IC(1.461 ns) + CELL(0.879 ns) = 3.366 ns; Loc. = LCFF_X2_Y20_N9; Fanout = 2; REG Node = 'dataPath:TEST|oneSecClock:clock|clock'
+        Info: 3: + IC(1.560 ns) + CELL(0.000 ns) = 4.926 ns; Loc. = CLKCTRL_G0; Fanout = 17; COMB Node = 'dataPath:TEST|oneSecClock:clock|clock~clkctrl'
+        Info: 4: + IC(0.987 ns) + CELL(0.602 ns) = 6.515 ns; Loc. = LCFF_X45_Y21_N15; Fanout = 4; REG Node = 'dataPath:TEST|displayChosen3[0]'
+        Info: Total cell delay = 2.507 ns ( 38.48 % )
+        Info: Total interconnect delay = 4.008 ns ( 61.52 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 8.575 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X45_Y21_N15; Fanout = 4; REG Node = 'dataPath:TEST|displayChosen3[0]'
+        Info: 2: + IC(1.550 ns) + CELL(0.521 ns) = 2.071 ns; Loc. = LCCOMB_X38_Y20_N6; Fanout = 1; COMB Node = 'dataPath:TEST|seg7DisplayforThird:thirdHEX|Display~0'
+        Info: 3: + IC(3.644 ns) + CELL(2.860 ns) = 8.575 ns; Loc. = PIN_D2; Fanout = 0; PIN Node = 'HEX1[5]'
+        Info: Total cell delay = 3.381 ns ( 39.43 % )
+        Info: Total interconnect delay = 5.194 ns ( 60.57 % )
+Info: th for register "dataPath:TEST|countDown:counter|tensDigit[1]~_emulated" (data pin = "KEY[0]", clock pin = "CLOCK_50") is 1.261 ns
+    Info: + Longest clock path from clock "CLOCK_50" to destination register is 6.521 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 5; CLK Node = 'CLOCK_50'
+        Info: 2: + IC(1.461 ns) + CELL(0.879 ns) = 3.366 ns; Loc. = LCFF_X2_Y20_N9; Fanout = 2; REG Node = 'dataPath:TEST|oneSecClock:clock|clock'
+        Info: 3: + IC(1.560 ns) + CELL(0.000 ns) = 4.926 ns; Loc. = CLKCTRL_G0; Fanout = 17; COMB Node = 'dataPath:TEST|oneSecClock:clock|clock~clkctrl'
+        Info: 4: + IC(0.993 ns) + CELL(0.602 ns) = 6.521 ns; Loc. = LCFF_X46_Y22_N17; Fanout = 1; REG Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~_emulated'
+        Info: Total cell delay = 2.507 ns ( 38.45 % )
+        Info: Total interconnect delay = 4.014 ns ( 61.55 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 5.546 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.864 ns) = 0.864 ns; Loc. = PIN_R22; Fanout = 40; CLK Node = 'KEY[0]'
+        Info: 2: + IC(2.156 ns) + CELL(0.545 ns) = 3.565 ns; Loc. = LCCOMB_X45_Y21_N6; Fanout = 4; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~4'
+        Info: 3: + IC(0.826 ns) + CELL(0.322 ns) = 4.713 ns; Loc. = LCCOMB_X46_Y21_N0; Fanout = 7; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[0]~head_lut'
+        Info: 4: + IC(0.559 ns) + CELL(0.178 ns) = 5.450 ns; Loc. = LCCOMB_X46_Y22_N16; Fanout = 1; COMB Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~data_lut'
+        Info: 5: + IC(0.000 ns) + CELL(0.096 ns) = 5.546 ns; Loc. = LCFF_X46_Y22_N17; Fanout = 1; REG Node = 'dataPath:TEST|countDown:counter|tensDigit[1]~_emulated'
+        Info: Total cell delay = 2.005 ns ( 36.15 % )
+        Info: Total interconnect delay = 3.541 ns ( 63.85 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 176 megabytes
+    Info: Processing ended: Wed Aug 12 20:50:45 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

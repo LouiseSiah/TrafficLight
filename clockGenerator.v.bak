@@ -1,0 +1,40 @@
+module Lab4bQ2
+(
+	input 	CLOCK_50,
+	input 	[0:0]KEY,
+	input	[1:0]SW,
+	output reg [7:7]LEDG
+);   
+
+integer count, limit;
+
+always@(posedge CLOCK_50, negedge KEY[0])
+begin
+	if(!KEY[0])
+	begin
+		count <= 0;
+		LEDG[7] <= 0;
+	end
+	else
+	begin
+		if(count == limit)
+		begin
+			LEDG[7] <= !LEDG[7] ;
+			//LEDG[7] <= count1Hz;
+			count <=0;
+		end
+		else
+			count <= count + 1; 
+	end
+end
+	
+always@(SW)
+		case(SW)
+			2'b00: limit = 25000000;
+			2'b01: limit = 12500000;
+			2'b10: limit = 5000000;
+			2'b11: limit = 2500000;
+			default: limit = (25000000) * 2;
+		endcase	
+
+endmodule

@@ -1,0 +1,15 @@
+module seg7DisplayforLastSecond
+(
+	input [1:0] Value,
+	output reg [6:0] Display
+);
+
+always@(Value)
+		case(Value)
+			2'b00: Display[6:0] = 7'b1000000; //0
+			2'b01: Display[6:0] = 7'b1111001;
+			2'b10: Display[6:0] = 7'b1000010;
+			default: Display[6:0] = 7'b1111111; // OFf
+		endcase	
+		
+endmodule

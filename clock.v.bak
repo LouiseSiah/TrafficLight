@@ -1,0 +1,28 @@
+module clock
+(
+	input 	CLOCK_50,
+	input 	[0:0] KEY,
+	output reg [7:7]LEDG
+);   
+
+integer count25M;
+
+always@(posedge CLOCK_50, negedge KEY[0])
+begin
+	if(!KEY[0])
+	begin
+		count25M <= 0;
+	end
+	else
+		if(count25M == 25000000)
+		begin
+			LEDG[7] <= !LEDG[7] ;
+			count25M <=0;
+		end
+		else
+			count25M <= count25M + 1; 
+end
+	
+
+
+endmodule

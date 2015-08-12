@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.426 ns
+From           : KEY[0]
+To             : controlUnit:integ|state.s2b
+From Clock     : --
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.367 ns
+From           : dataPath:TEST|displayChosen3[0]
+To             : HEX1[5]
+From Clock     : CLOCK_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.261 ns
+From           : KEY[0]
+To             : dataPath:TEST|countDown:counter|tensDigit[1]~_emulated
+From Clock     : --
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_50'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 58.34 MHz ( period = 17.140 ns )
+From           : dataPath:TEST|countDown:counter|tensDigit[1]~latch
+To             : controlUnit:integ|state.s2b
+From Clock     : CLOCK_50
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Clock Hold: 'CLOCK_50'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : controlUnit:integ|state.s2a
+To             : dataPath:TEST|countDown:counter|tensDigit[0]~latch
+From Clock     : CLOCK_50
+To Clock       : CLOCK_50
+Failed Paths   : 38
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 38
+
+--------------------------------------------------------------------------------------
+

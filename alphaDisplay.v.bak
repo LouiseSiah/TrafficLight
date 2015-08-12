@@ -1,0 +1,19 @@
+module seg7Display
+(
+	input [2:0] Value,
+	output reg [6:0] Display
+
+);
+
+
+always@(Value)
+		case(Value)
+			3'b001: Display[6:0] = 7'b0001001; //H
+			3'b010: Display[6:0] = 7'b0101111; //r
+			3'b011: Display[6:0] = 7'b1000110; //C
+			3'b100: Display[6:0] = 7'b0010010; //S
+			3'b101: Display[6:0] = 7'b0001111; //t
+			default: Display[6:0] = 7'b1111111; // OFf
+		endcase	
+		
+endmodule
